@@ -24,7 +24,7 @@ int main(void) {
 		iNumbers[i] = (rand() % 20) - 10;
 	
 	for (int i = 0; i < 4; i++)
-		dNumbers[i] = (((rand() % 111) - 10) % ((rand() % 111) - 10)) - 10;
+		dNumbers[i] = (rand() % 201 - 100) % (rand() % 91 + 10);;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -34,8 +34,8 @@ int main(void) {
 
 	for (int i = 0; i < 4; i++)
 	{
-		cNumbers[i].real = (((rand() % 111) - 10) % ((rand() % 111) - 10)) - 10;
-		cNumbers[i].real = (((rand() % 111) - 10) % ((rand() % 111) - 10)) - 10;
+		cNumbers[i].real = (rand() % 201 - 100) % (rand() % 91 + 10);
+		cNumbers[i].real = (rand() % 201 - 100) % (rand() % 91 + 10);
 	}
 	int chosen;
 
