@@ -15,7 +15,6 @@ Students: eli iluz 311201354
 #include "complex.h"
 #include <ctime>
 
-
 // These are all of the main menu options.
 // the user will see them on the screen,
 // and will input them for

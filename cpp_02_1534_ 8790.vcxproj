@@ -124,10 +124,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="rational.cpp" />
+    <ClCompile Include="common.cpp" />
+    <ClCompile Include="complex.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="comlex.h" />
+    <ClInclude Include="common.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mytypes.h" />
+    <ClInclude Include="rational.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
