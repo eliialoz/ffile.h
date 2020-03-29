@@ -24,18 +24,18 @@ int main(void) {
 		iNumbers[i] = (rand() % 20) - 10;
 	
 	for (int i = 0; i < 4; i++)
-		dNumbers[i] = (rand() % 20) - 10.0;
+		dNumbers[i] = (rand() % 201 - 100) % (rand() % 91 + 10);;
 
 	for (int i = 0; i < 4; i++)
 	{
-		rNumbers[i]. = (rand() % 21) - 10;
-		rNumbers[i]. = (rand() % 30) + 1;
+		rNumbers[i].numerator = (rand() % 21) - 10;
+		rNumbers[i].denominator = (rand() % 30) + 1;
 	}
 
 	for (int i = 0; i < 4; i++)
 	{
-		cNumbers[i]. = (rand() % 21) - 10.0;
-		cNumbers[i]. = (rand() % 21) - 10.0;
+		cNumbers[i].real = (rand() % 201 - 100) % (rand() % 91 + 10);
+		cNumbers[i].real = (rand() % 201 - 100) % (rand() % 91 + 10);
 	}
 	int chosen;
 
@@ -349,6 +349,3 @@ int main(void) {
 
 	return 0;
 }
-
-
-istream& operator >>(istream&, int&)

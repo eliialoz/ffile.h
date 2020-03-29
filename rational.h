@@ -1,5 +1,5 @@
-#ifndef RATIONAL
-#define RATIONAL
+#ifndef RATIONAL_H
+#define RATIONAL_H
 
 #include"mytypes.h"
 #include<iostream>
