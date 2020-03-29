@@ -129,7 +129,7 @@
     <ClCompile Include="complex.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="comlex.h" />
+    <ClInclude Include="complex.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="mytypes.h" />

@@ -38,10 +38,10 @@
     <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="comlex.h">
+    <ClInclude Include="rational.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="rational.h">
+    <ClInclude Include="complex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
