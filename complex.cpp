@@ -10,7 +10,7 @@ Students: eli iluz 311201354
 #include "complex.h"
 
 
-Complex ComplexCtor(double real, double imaginary)
+Complex complexCtor(double real, double imaginary)
 {
 	Complex cNum;
 
@@ -20,11 +20,11 @@ Complex ComplexCtor(double real, double imaginary)
 	return cNum;
 }
 
-Complex& ComplexCtor(Rational& rNum)
+Complex& complexCtor(Rational& rNum)
 {
 	Complex cNum;
 
-	cNum = ComplexCtor(convert(rNum));
+	cNum = complexCtor(convert(rNum));
 
 	return cNum;
 }
@@ -125,7 +125,7 @@ istream& operator>>(istream& in, Complex& cNum)
 	double real, imaginary;
 
 	in >> real >> imaginary;
-	cNum = ComplexCtor(real, imaginary);
+	cNum = complexCtor(real, imaginary);
 
 	return in;
 }

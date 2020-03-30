@@ -18,11 +18,11 @@ struct Complex
 };
 //The function accepts 2 numbers and returns the complex number
 //If the user entered only one number, the imaginary value would be initialized in the 0
-Complex ComplexCtor(double real, double imaginary = 0);
+Complex complexCtor(double real, double imaginary = 0);
 
 //The function accepts rational numer and returns complex number 
 //The real part is equal to the rational number and the imaginary part is equal to 0
-Complex& ComplexCtor(Rational&);
+Complex& complexCtor(Rational&);
 
 //The function accepts  a complex number and returns its length
 double abs(const Complex&);
