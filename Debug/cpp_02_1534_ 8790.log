@@ -1,4 +1,3 @@
-﻿  main.cpp
-C:\Users\אבישי פרקש\source\repos\cpp_02_1534_ 8790\main.cpp(42,10): warning C4101: 'dNumbers': unreferenced local variable
-C:\Users\אבישי פרקש\source\repos\cpp_02_1534_ 8790\main.cpp(41,7): warning C4101: 'iNumbers': unreferenced local variable
+﻿  rational.cpp
+C:\Users\אבישי פרקש\source\repos\cpp_02_1534_ 8790\rational.cpp(37,27): warning C4018: '>': signed/unsigned mismatch
   cpp_02_1534_ 8790.vcxproj -> C:\Users\אבישי פרקש\source\repos\cpp_02_1534_ 8790\Debug\cpp_02_1534_ 8790.exe
