@@ -4,7 +4,7 @@
 /*
 File: main.h
 Description:
-Course: 150018 C++ Workshop, Exercise 1, Question 1
+Course: 150018 C++ Workshop, Exercise 2, Question 2
 Author: Dan Zilberstein
 Students: eli iluz 311201354
 		& avishay farkash 205918790
@@ -40,9 +40,13 @@ enum Types {
 	DOUBLE,
 	RATIONAL,
 	COMPLEX,
+	INT_IN_RATIONAL,
+	INT_IN_COMPLEX,
+	RATIONAL_IN_COMPLEX,
 	// a neat trick for for-loop initial and final values
 	FIRST_TYPE = INT,
-	LAST_TYPE = COMPLEX
+	LAST_TYPE = COMPLEX,
+	LAST_CHOICE = RATIONAL_IN_COMPLEX
 };
 
 // These strings will be seen by the user, on the main menu.
@@ -64,5 +68,8 @@ const char* const typesStrings[] = {
 	"double",
 	"rational",
 	"complex",
+	"int in rational",
+	"int in complex",
+	"rational in complex"
 };
 #endif
