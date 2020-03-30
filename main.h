@@ -36,7 +36,7 @@ enum MenuOption {
 
 // These are all of the number types.
 enum Types {
-	INT,
+	INT = 1,
 	DOUBLE,
 	RATIONAL,
 	COMPLEX,
@@ -44,9 +44,9 @@ enum Types {
 	INT_IN_COMPLEX,
 	RATIONAL_IN_COMPLEX,
 	// a neat trick for for-loop initial and final values
-	FIRST_TYPE = INT,
-	LAST_TYPE = COMPLEX,
-	LAST_CHOICE = RATIONAL_IN_COMPLEX
+	FIRST_TYPE = INT - 1,
+	LAST_TYPE = COMPLEX - 1,
+	LAST_CHOICE = RATIONAL_IN_COMPLEX - 1
 };
 
 // These strings will be seen by the user, on the main menu.
