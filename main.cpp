@@ -18,7 +18,14 @@ int main(void) {
 	Rational rNumbers[4];
 	Complex cNumbers[4];
 
-	srand((unsigned) time(nullptr));
+	int iNum, iOper1, iOper2, iResult;
+	double dNum;
+	Rational rNum;
+	Complex cNum;
+
+
+
+	srand((unsigned)time(nullptr));
 
 	for (int i = 0; i < 4; i++)
 		iNumbers[i] = (rand() % 20) - 10;
@@ -97,21 +104,81 @@ int main(void) {
 			switch (chosen)
 			{
 			case INT:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+				cout << "enter a integer number: " << endl;
+				cin >> iNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					iNumbers[chosen] = iNum;
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+				cout << "enter a decimal number: " << endl;
+				cin >> dNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					dNumbers[chosen] = dNum;
 				break;
 			case RATIONAL:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+				cout << "enter two integer numbers for a rational number" << endl << "first one - numerator , second one - denominator: ";
+				cin >> rNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					rNumbers[chosen] = rNum;
 				break;
 			case COMPLEX:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+
+				cout << "enter two decimal numbers for a comlex number" << endl << "first one - real , second one - imaginary: ";
+				cin >> cNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					cNumbers[chosen] = cNum;
 				break;
 			case INT_IN_RATIONAL:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+				cout << "enter a integer number for a rational number: " << endl;
+				cin >> iNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					rNumbers[chosen] = rationalCtor(iNum);
 				break;
 			case INT_IN_COMPLEX:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+				cout << "enter a integer number for a comlex number: " << endl;
+				cin >> dNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					cNumbers[chosen] = complexCtor(dNum);
 				break;
 			case RATIONAL_IN_COMPLEX:
+				cout << "choose index to insert between 0 to 3 : " << endl;
+				cin >> chosen;
+				cout << "enter two integer numbers for a rational number to input in complex number " << endl << "first one - numerator , second one - denominator: ";
+				cin >> rNum;
+				if (chosen < 0 || chosen>3)
+					cout << "ERROR: index not found" << endl;
+				else
+					cNumbers[chosen] = complexCtor(rNum);
 				break;
 			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 
@@ -138,12 +205,14 @@ int main(void) {
 
 			cout << "Please choose a type: ";
 			cin >> chosen;
-	
+
 			switch (chosen)
 			{
 			case INT:
 				for (int i = 0; i < 4; i++)
 					cout << "index [" << i << "] -- " << iNumbers[i] << endl;
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
@@ -157,6 +226,9 @@ int main(void) {
 			case COMPLEX:
 				for (int i = 0; i < 4; i++)
 					cout << "index [" << i << "] -- " << cNumbers[i] << endl;
+				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 			break;
@@ -185,13 +257,34 @@ int main(void) {
 			switch (chosen)
 			{
 			case INT:
+				iNum = 0;
+				for (int i = 0; i < 4; i++)
+					iNum = iNum + iNumbers[i];
+				cout << "the sum of all integer  numbers is: " << iNum << endl;
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
+				dNum = 0;
+				for (int i = 0; i < 4; i++)
+					dNum = dNum + dNumbers[i];
+				cout << "the sum of all decimal numbers is: " << dNum << endl;
 				break;
 			case RATIONAL:
+				rNum = {};
+				for (int i = 0; i < 4; i++)
+					rNum = rNum + rNumbers[i];
+				cout << "the sum of all rational numbers is: " << rNum << endl;
 				break;
 			case COMPLEX:
+				cNum = {};
+				for (int i = 0; i < 4; i++)
+					cNum = cNum + cNumbers[i];
+				cout << "the sum of all complex numbers is: " << rNum << endl;
+				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 			break;
@@ -220,13 +313,34 @@ int main(void) {
 			switch (chosen)
 			{
 			case INT:
+				iNum = 0;
+				for (int i = 0; i < 4; i++)
+					iNum = iNum * iNumbers[i];
+				cout << "the multiply of all integer  numbers is: " << iNum << endl;
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
+				dNum = 0;
+				for (int i = 0; i < 4; i++)
+					dNum = dNum * dNumbers[i];
+				cout << "the multiply of all decimal numbers is: " << dNum << endl;
 				break;
 			case RATIONAL:
+				rNum = {};
+				for (int i = 0; i < 4; i++)
+					rNum = rNum * rNumbers[i];
+				cout << "the multiply of all rational numbers is: " << rNum << endl;
 				break;
 			case COMPLEX:
+				cNum = {};
+				for (int i = 0; i < 4; i++)
+					cNum = cNum * cNumbers[i];
+				cout << "the multiply of all complex numbers is: " << rNum << endl;
+				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 			break;
@@ -255,13 +369,53 @@ int main(void) {
 			switch (chosen)
 			{
 			case INT:
+				cout << "choose the two indexes do you want to add:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&iNumbers[iResult], &iNumbers[iOper1], &iNumbers[iOper2], [](void* s, const void* n1, const void* n2) { *(int*)s = *(int*)n1 + *(int*)n2; });
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
+				cout << "choose the two indexes do you want to add:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&dNumbers[iResult], &dNumbers[iOper1], &dNumbers[iOper2], [](void* s, const void* n1, const void* n2) { *(double*)s = *(double*)n1 + *(double*)n2; });
+
 				break;
 			case RATIONAL:
+				cout << "choose the two indexes do you want to add:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&rNumbers[iResult], &rNumbers[iOper1], &rNumbers[iOper2], addRational);
+
 				break;
 			case COMPLEX:
+				cout << "choose the two indexes do you want to add:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&cNumbers[iResult], &cNumbers[iOper1], &cNumbers[iOper2],addComplex);
+
+				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 			break;
@@ -287,16 +441,57 @@ int main(void) {
 			cout << "Please choose a type: ";
 			cin >> chosen;
 
+
 			switch (chosen)
 			{
 			case INT:
+				cout << "choose the two indexes do you want to multiply:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&iNumbers[iResult], &iNumbers[iOper1], &iNumbers[iOper2], [](void* s, const void* n1, const void* n2) { *(int*)s = (*(int*)n1) * (*(int*)n2); });
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
+				cout << "choose the two indexes do you want to multiply:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&dNumbers[iResult], &dNumbers[iOper1], &dNumbers[iOper2], [](void* s, const void* n1, const void* n2) { *(double*)s = (*(double*)n1) * (*(double*)n2); });
+
 				break;
 			case RATIONAL:
+				cout << "choose the two indexes do you want to multiply:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&rNumbers[iResult], &rNumbers[iOper1], &rNumbers[iOper2], multRational);
+
 				break;
 			case COMPLEX:
+				cout << "choose the two indexes do you want to multiply:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&cNumbers[iResult], &cNumbers[iOper1], &cNumbers[iOper2], multComplex);
+
+				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 			break;
@@ -325,16 +520,57 @@ int main(void) {
 			switch (chosen)
 			{
 			case INT:
+				cout << "choose the two indexes do you want to sub:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&iNumbers[iResult], &iNumbers[iOper1], &iNumbers[iOper2], [](void* s, const void* n1, const void* n2) { *(int*)s = (*(int*)n1) - (*(int*)n2); });
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
+				cout << "choose the two indexes do you want to sub:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&dNumbers[iResult], &dNumbers[iOper1], &dNumbers[iOper2], [](void* s, const void* n1, const void* n2) { *(double*)s = (*(double*)n1) - (*(double*)n2); });
+
 				break;
 			case RATIONAL:
+				cout << "choose the two indexes do you want to sub:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&rNumbers[iResult], &rNumbers[iOper1], &rNumbers[iOper2], subRational);
+
 				break;
 			case COMPLEX:
+				cout << "choose the two indexes do you want to sub:" << endl;
+				cin >> iOper1 >> iOper2;
+				cout << "choose the index for the result : " << endl;
+				cin >> iResult;
+				if (((iOper1 < 0) || (iOper1 > 3)) && ((iOper2 < 0) || (iOper2 > 3)) && ((iResult < 0) || (iResult > 3)))
+					cout << "ERROR: index not found" << endl;
+				else
+					operetion(&cNumbers[iResult], &cNumbers[iOper1], &cNumbers[iOper2], subComplex);
+
+				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
 				break;
 			}
 			break;
+
 
 		case SORT_ELEMENTS_OF_ONE_TYPE:
 			cout << endl << "types options:" << endl << endl;
@@ -370,6 +606,8 @@ int main(void) {
 
 						return -1;
 					});
+
+				//restart chosen to non-zero value to keep on the loop
 				chosen = 1;
 				break;
 			case DOUBLE:
@@ -390,11 +628,14 @@ int main(void) {
 			case COMPLEX:
 				qsort(cNumbers, 4, sizeof * cNumbers, compareComplex);
 				break;
+			default:
+				cout << "ERROR:illegal choice" << endl;
+				break;
 			}
 			break;
 
 		default:
-			cout << "ERROR" << endl;
+			cout << "ERROR:illegal choice" << endl;
 			break;
 		}
 	} while (chosen != EXIT_MENU);
